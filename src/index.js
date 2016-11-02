@@ -9,9 +9,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      gifs: []
+      gifs: [],
+      selectedGif: null,
+      modalIsOpen: false
     };
     this.handleTermChange = this.handleTermChange.bind(this);
+  }
+
+  openModal(gif) {
+    this.setState({
+      modalIsOpen: true,
+      selectedGif: gif
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      modalIsOpen: false,
+      selectGif: null
+    });
   }
 
   handleTermChange(term) {
