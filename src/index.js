@@ -9,14 +9,15 @@ class App extends React.Component {
     super(props);
     this.state = {
       gifs: []
-    }
+    };
+    this.handleTermChange = this.handleTermChange.bind(this);
   }
 
   handleTermChange(term) {
-    const url = `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=dc6zaTOxFJmzC`;
+    const url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=dc6zaTOxFJmzC`;
 
-    request.get(url, function(err, res) {
-      console.log(res.body.data[0]);
+    request.get(url, (err, res) => {
+      this.setState({ gifs: res.body.data })
     });
   }
 

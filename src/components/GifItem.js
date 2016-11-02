@@ -3,7 +3,7 @@ import React from 'react';
 const GifItem = (image) => {
   return (
     <li>
-      <img role="presentation" src={image.gif.url} />
+      <img src={image.gif.images.downsized.url} role="presentation" />
     </li>
   )
 };
