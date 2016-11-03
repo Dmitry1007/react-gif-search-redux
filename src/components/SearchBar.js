@@ -14,7 +14,8 @@ class SearchBar extends React.Component {
   render () {
     return (
       <div>
-        <input onChange={event => this.onInputChange(event.target.value)} />
+        <input placeholder="Enter Text To Search For Giffs!"
+               onChange={event => this.onInputChange(event.target.value)} />
       </div>
     )
   }
